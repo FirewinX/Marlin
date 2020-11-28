@@ -495,9 +495,9 @@
     #define DEFAULT_Ki_LIST {   1.85,   1.85 }
     #define DEFAULT_Kd_LIST {  73.55,  73.55 }
   #else
-    #define DEFAULT_Kp  23.34
-    #define DEFAULT_Ki   1.85
-    #define DEFAULT_Kd  73.55
+    #define DEFAULT_Kp  22.78
+    #define DEFAULT_Ki   1.73
+    #define DEFAULT_Kd  75.01
   #endif
 #endif // PIDTEMP
 
@@ -535,9 +535,9 @@
   //#define PID_BED_DEBUG // Sends debug data to the serial port.
 
   // BIQU B1
-  #define DEFAULT_bedKp 100.65
-  #define DEFAULT_bedKi 14.82
-  #define DEFAULT_bedKd 455.69
+  #define DEFAULT_bedKp 81.10
+  #define DEFAULT_bedKi 12.20
+  #define DEFAULT_bedKd 359.37
 
   // FIND YOUR OWN: "M303 E-1 C8 S90" to run autotune on the bed at 90 degreesC for 8 cycles.
 #endif // PIDTEMPBED
