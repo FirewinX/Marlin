@@ -257,6 +257,11 @@
  *               -----                                             -----
  *               EXP2                                              EXP1
  */
+#define I2C_EEPROM
+#ifdef E2END
+   #undef E2END
+#endif
+#define E2END 0x7FFF // EEPROM end address AT24C256 (32kB)
 
 #if HAS_WIRED_LCD && !HAS_BTT_EXP_MOT
   #if ENABLED(ANET_FULL_GRAPHICS_LCD_ALT_WIRING)
