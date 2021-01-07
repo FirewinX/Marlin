@@ -495,9 +495,9 @@
     #define DEFAULT_Ki_LIST {   1.85,   1.85 }
     #define DEFAULT_Kd_LIST {  73.55,  73.55 }
   #else
-    #define DEFAULT_Kp  22.78
-    #define DEFAULT_Ki   1.73
-    #define DEFAULT_Kd  75.01
+    #define DEFAULT_Kp  22.94
+    #define DEFAULT_Ki   1.84
+    #define DEFAULT_Kd  71.60
   #endif
 #endif // PIDTEMP
 
@@ -535,9 +535,9 @@
   //#define PID_BED_DEBUG // Sends debug data to the serial port.
 
   // BIQU B1
-  #define DEFAULT_bedKp 81.10
-  #define DEFAULT_bedKi 12.20
-  #define DEFAULT_bedKd 359.37
+  #define DEFAULT_bedKp 115.88
+  #define DEFAULT_bedKi 17.55
+  #define DEFAULT_bedKd 510.01
 
   // FIND YOUR OWN: "M303 E-1 C8 S90" to run autotune on the bed at 90 degreesC for 8 cycles.
 #endif // PIDTEMPBED
@@ -1092,7 +1092,7 @@
 //#define DELAY_BEFORE_PROBING 200  // (ms) To prevent vibrations from triggering piezo sensors
 
 // Require minimum nozzle and/or bed temperature for probing
-#define PREHEAT_BEFORE_PROBING
+//#define PREHEAT_BEFORE_PROBING
 #if ENABLED(PREHEAT_BEFORE_PROBING)
   #define PROBING_NOZZLE_TEMP 150   // (°C) Only applies to E0 at this time
   #define PROBING_BED_TEMP     53
