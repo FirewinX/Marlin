@@ -230,4 +230,3 @@
 #define PAGE_CONTAINS(ya, yb) ((yb) >= u8g.getU8g()->current_page.y0 && (ya) <= u8g.getU8g()->current_page.y1) // Do two vertical regions overlap?
 
 extern U8G_CLASS u8g;
-extern const char E_LBL[];
