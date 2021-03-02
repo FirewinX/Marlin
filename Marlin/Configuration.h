@@ -1049,13 +1049,13 @@
 #define PROBING_MARGIN 10
 
 // X and Y axis travel speed (mm/min) between probes
-#define XY_PROBE_SPEED (133*60)
+#define XY_PROBE_FEEDRATE (133*60)
 
 // Feedrate (mm/min) for the first approach when double-probing (MULTIPLE_PROBING == 2)
-#define Z_PROBE_SPEED_FAST (4*60)
+#define Z_PROBE_FEEDRATE_FAST (4*60)
 
 // Feedrate (mm/min) for the "accurate" probe of each point
-#define Z_PROBE_SPEED_SLOW (Z_PROBE_SPEED_FAST / 2)
+#define Z_PROBE_FEEDRATE_SLOW (Z_PROBE_FEEDRATE_FAST / 2)
 
 /**
  * Probe Activation Switch
@@ -1280,6 +1280,8 @@
   #define FIL_RUNOUT_STATE     LOW        // Pin state indicating that filament is NOT present.
   #define FIL_RUNOUT_PULLUP               // Use internal pullup for filament runout pins.
   //#define FIL_RUNOUT_PULLDOWN           // Use internal pulldown for filament runout pins.
+  //#define WATCH_ALL_RUNOUT_SENSORS      // Execute runout script on any triggering sensor, not only for the active extruder.
+                                          // This is automatically enabled for MIXING_EXTRUDERs.
 
   // Override individually if the runout sensors vary
   //#define FIL_RUNOUT1_STATE LOW
@@ -1313,8 +1315,10 @@
   //#define FIL_RUNOUT8_STATE LOW
   //#define FIL_RUNOUT8_PULLUP
   //#define FIL_RUNOUT8_PULLDOWN
-  // Set one or more commands to execute on filament runout.
-  // (After 'M412 H' Marlin will ask the host to handle the process.)
+
+  // Commands to execute on filament runout.
+  // With multiple runout sensors use the %c placeholder for the current tool in commands (e.g., "M600 T%c")
+  // NOTE: After 'M412 H1' the host handles filament runout and this script does not apply.
   #define FILAMENT_RUNOUT_SCRIPT "M600"
 
   // After a runout is detected, continue printing this length of filament
@@ -2355,6 +2359,7 @@
 //#define DGUS_LCD_UI_ORIGIN
 //#define DGUS_LCD_UI_FYSETC
 //#define DGUS_LCD_UI_HIPRECY
+//#define DGUS_LCD_UI_MKS
 
 //
 // CR-6 OEM touch screen. A DWIN display with touch.
@@ -2661,6 +2666,7 @@
   // Use a single NeoPixel LED for static (background) lighting
   //#define NEOPIXEL_BKGD_LED_INDEX  0               // Index of the LED to use
   //#define NEOPIXEL_BKGD_COLOR { 255, 255, 255, 0 } // R, G, B, W
+  //#define NEOPIXEL_BKGD_ALWAYS_ON                  // Keep the backlight on when other NeoPixels are off
 #endif
 
 /**
