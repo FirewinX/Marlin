@@ -1,4 +1,4 @@
-name: 🐛 Report a bug
+name: 🪲 Report a bug
 description: Create a bug report to help improve Marlin Firmware
 title: "[BUG] (bug summary)"
 issue_body: true
@@ -56,6 +56,11 @@ body:
     validations:
       required: true
 
+  - type: input
+    attributes:
+      label: Bug Timeline
+      description: Is this a new bug or an old issue? When did it first start?
+
   - type: textarea
     attributes:
       label: Expected behavior
@@ -74,7 +79,7 @@ body:
       label: Steps to Reproduce
       description: >-
         Please describe the steps needed to reproduce the issue.
-      placeholder: >-
+      placeholder: |
         1. [First Step] ...
         2. [Second Step] ...
         3. [and so on] ...
